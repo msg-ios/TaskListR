@@ -5,4 +5,6 @@
 
 + (TaskListRAPIClient *)sharedClient;
 
++ (NSData *)dataFromHexString:(NSString *)string;
+
 @end

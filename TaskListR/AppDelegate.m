@@ -10,6 +10,8 @@
 
 #import "AFNetworkActivityIndicatorManager.h"
 
+#import "TaskListRViewController.h"
+
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -24,7 +26,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
-    UIViewController *viewController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+    TaskListRViewController *viewController = [[TaskListRViewController alloc] initWithNibName:@"TaskListRViewController" bundle:nil];
+    viewController.managedObjectContext = self.managedObjectContext;
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
